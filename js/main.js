@@ -11,19 +11,30 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiY2Fyb2xwb3MiLCJhIjoiQ01qN3dEWSJ9.Vgyz5uVSv3sw
 
 map.addControl(new mapboxgl.NavigationControl());
 
+var layers = {
+    superior: ['pontos-superior', 'pontos-superior-rj'],
+    medio: ['pontos-medio', 'pontos-medio-rj'],
+    fundamental: ['pontos-fundamental', 'pontos-fundamental-rj'],
+    incompleto: ['pontos-incompleto', 'pontos-incompleto-rj']
+}
+
 
 $(document).ready(function(){
     $('.legend-container > li').click(function() {
         var layerName = $(this).data('layer');
-        var visibility = map.getLayoutProperty(layerName, 'visibility');
+        var element = $(this);
 
-        if (visibility === 'visible') {
-            $(this).removeClass('active');
-            map.setLayoutProperty(layerName, 'visibility', 'none');
-        } else {
-            $(this).addClass('active');
-            map.setLayoutProperty(layerName, 'visibility', 'visible');
-        }
+        $.each(layers[layerName], function( index, value ) {
+
+            var visibility = map.getLayoutProperty(value, 'visibility');
+            if (visibility === 'visible') {
+                element.removeClass('active');
+                map.setLayoutProperty(value, 'visibility', 'none');
+            } else {
+                element.addClass('active');
+                map.setLayoutProperty(value, 'visibility', 'visible');
+            }
+        });
 
     });
 
