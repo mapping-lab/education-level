@@ -6,7 +6,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiY2Fyb2xwb3MiLCJhIjoiQ01qN3dEWSJ9.Vgyz5uVSv3sw
         center: [-46.631,-23.604],
         zoom: 10,
         minZoom: 10,
-        maxZoom: 15,
+        maxZoom: 16,
     });
 
 map.addControl(new mapboxgl.NavigationControl());
