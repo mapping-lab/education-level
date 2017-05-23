@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Educational Attainment</title>
+
+        <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+        <script src="js/lib/jquery-3.2.0.min.js"></script>
+        <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.37.0/mapbox-gl.js'></script>
+
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet">
+        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.37.0/mapbox-gl.css' rel='stylesheet' />
+        <link rel="stylesheet" href="css/styles.css">
+
+    </head>
+    <body>
+
+        <div class="about-box">
+            <h1>Educational attainment in<br>Metropolitan Regions</h1>
+            <ul class="city-container">
+                <li class="sao-paulo">São Paulo</li>
+                <li class="rio-janeiro">Rio de Janeiro</li>
+            </ul>
+            <p class="about-description">It's a density-dot map that represents the population aged 25 or over by their highest level of education. <br>1 dot=10 people</p>
+            <ul class="legend-container">
+                <li class="active" data-layer="pontos-superior"><span class="level-higher"></span>Undergraduate / graduate degrees</li>
+                <li class="active" data-layer="pontos-medio"><span class="level-high-school"></span>High school</li>
+                <li class="active" data-layer="pontos-fundamental"><span class="level-basic"></span>Basic education</li>
+                <li class="active" data-layer="pontos-incompleto"><span class="level-incomplete"></span>Incomplete basic education</li>
+            </ul>
+            <p class="about-links">
+                <a href="#">Read about the map here.</a>
+            </p>
+        </div>
+
+        <div id="map"></div>
+
+        <script src="js/main.js"></script>
+
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-27724974-2', 'auto');
+          ga('send', 'pageview');
+
+        </script>
+
+    </body>
+</html>
