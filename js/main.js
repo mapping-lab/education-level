@@ -5,8 +5,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiY2Fyb2xwb3MiLCJhIjoiQ01qN3dEWSJ9.Vgyz5uVSv3sw
         style: 'mapbox://styles/carolpos/cj29jqouu00192tpe0a3jjrmm',
         center: [-46.631,-23.604],
         zoom: 10,
-        minZoom: 10,
-        maxZoom: 16,
+        minZoom: 9,
+        maxZoom: 15,
     });
 
 map.addControl(new mapboxgl.NavigationControl());
