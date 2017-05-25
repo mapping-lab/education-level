@@ -59,7 +59,8 @@ body {
 .city-container .rio-janeiro:last-child {
   margin: 0px;
 }
-.about-description, .about-dot {
+.about-description,
+.about-dot {
     margin-left: 10px;
     color: #D8D8D8;
     margin-top: 0px;
