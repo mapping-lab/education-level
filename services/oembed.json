@@ -7,5 +7,5 @@
     "height": "480",
     "description": "It's a density-dot map that represents the population aged 25 and over by their highest level of education in São Paulo and Rio de Janeiro Metropolitan Regions.",
     "provider_name": "Mapping-lab",
-    "type": "rich"
+    "type": "link"
 }
