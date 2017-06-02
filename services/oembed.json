@@ -1,10 +1,10 @@
 {
-    "version": "1.0",
-    "type": "rich",
-    "width": 640,
-    "height": 480,
+    "provider_url": "https://www.mappinglab.me",
     "title": "Educational Landscape",
     "url": "https://www.mappinglab.me/education-level/",
-    "author_name": "Mapping-lab",
-    "author_url": "https://www.mappinglab.me/",
+    "version": "1.0",
+    "width": "640",
+    "height": "480",
+    "provider_name": "Mapping-lab",
+    "type": "rich"
 }
