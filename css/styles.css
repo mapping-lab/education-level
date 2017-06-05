@@ -6,12 +6,16 @@ body {
   color: #000;
   font-weight: 300;
 }
+/*#map {
+clear: both;
+}*/
 .header-home {
     padding: 5px 0;
     background-color: #7d82ff;
     width: 100%;
     z-index: 2;
     position: absolute;
+    height: 20px;
 }
 .header-home .links {
     width: 1100px;
@@ -27,12 +31,7 @@ body {
     padding: 0;
     display: inline;
 }
-/*.header-home .links ul li a {
-    opacity: .5;
-}*/
-/*.header-home .links ul li:last-child {
-  margin: 0;
-}*/
+
 .header-home .links img {
     height: 10px;
     margin: 2px 0;
@@ -51,7 +50,7 @@ body {
     height: 100%;
     width: 100%;
     position: absolute;
-    top: 0px;
+    top: 30px;
     left: 0px;
     right: 0px;
     bottom: 0px;
