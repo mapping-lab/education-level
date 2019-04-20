@@ -2,67 +2,20 @@
     <head>
         <meta charset="utf-8">
 
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:site" content="@mappinglab">
-        <meta name="twitter:title" content="Educational Landscape">
-        <meta name="twitter:description" content="It's a density-dot map that represents the population aged 25 and over by their highest level of education in São Paulo and Rio de Janeiro Metropolitan Regions.">
-        <meta name="twitter:image" content="https://www.mappinglab.me/education-level/images/twitter.png">
-
-        <meta property="og:description" content="It's a density-dot map that represents the population aged 25 and over by their highest level of education in São Paulo and Rio de Janeiro Metropolitan Regions.">
-        <meta property="og:site_name" content="Mapping-lab">
-        <meta property="og:title" content="Educational Landscape">
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="https://www.mappinglab.me/education-level/">
-        <meta property="og:image" content="https://www.mappinglab.me/education-level/images/fb.png">
-        <meta property="og:image:width" content="600">
-        <meta property="og:image:height" content="315">
-        <meta property="og:image" content="https://www.mappinglab.me/education-level/images/fb_2x.png">
-        <meta property="og:image:width" content="1200">
-        <meta property="og:image:height" content="630">
-
         <title>Educational Landscape</title>
 
         <meta name='viewport' content='width=1100,user-scalable=no' />
 
         <script src="js/lib/jquery-3.2.0.min.js"></script>
-        <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.37.0/mapbox-gl.js'></script>
+        <script src="js/lib/keyboard.min.js"></script>
+        <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js'></script>
 
         <link href="https://fonts.googleapis.com/css?family=Lato:300,700" rel="stylesheet">
-        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.37.0/mapbox-gl.css' rel='stylesheet' />
+        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
         <link rel="stylesheet" href="css/styles.css">
 
     </head>
     <body>
-        <div class="header-home">
-            <div class="links">
-                <ul>
-                    <li><a class="logo" href="http://www.mappinglab.me/"><img src="svg/logo.svg" alt="mapping-lab"></a></li>
-                    <li><a target="_blank" href="https://twitter.com/mappinglab"><img src="svg/icon_twitter.svg" onmouseover="this.src='svg/icon_twitter_hover.svg'" onmouseout="this.src='svg/icon_twitter.svg'" alt="Twitter"></a></li>
-                    <li><a href="mailto:hello@mappinglab.me"><img src="svg/icon_email.svg" onmouseover="this.src='svg/icon_email_hover.svg'" onmouseout="this.src='svg/icon_email.svg'" alt="Email"></a></li>
-                    <li><a target="_blank" href="https://medium.com/mappinglab"><img src="svg/icon_medium.svg" onmouseover="this.src='svg/icon_medium_hover.svg'" onmouseout="this.src='svg/icon_medium.svg'" alt="Medium"></a></li>
-                </ul>
-                </div>
-        </div>
-
-        <div class="about-box">
-            <h1>Educational landscape<br>of the adult population<br>in Metropolitan Regions</h1>
-            <ul class="city-container">
-                <li class="sao-paulo">São Paulo</li>
-                <li class="rio-janeiro">Rio de Janeiro</li>
-            </ul>
-            <p class="about-description">It's a density-dot map that represents the population aged 25 and over by their highest level of education.</p>
-            <p class="about-dot">At the highest zoom level 1 dot means 10 people.</p>
-            <ul class="legend-container">
-                <li class="active" data-layer="superior"><span class="level-higher"></span>Undergraduate / graduate degrees</li>
-                <li class="active" data-layer="medio"><span class="level-high-school"></span>High school</li>
-                <li class="active" data-layer="fundamental"><span class="level-basic"></span>Basic education</li>
-                <li class="active" data-layer="incompleto"><span class="level-incomplete"></span>Incomplete basic education</li>
-            </ul>
-            <p class="about-links">
-                <a target="_blank" href="https://medium.com/@mappinglab/educational-landscape-of-the-adult-population-in-metropolitan-regions-cccf39d7a3f8">Read about the map here.</a>
-            </p>
-        </div>
-
         <div id="map"></div>
 
         <script src="js/main.js"></script>

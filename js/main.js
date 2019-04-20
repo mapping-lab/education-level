@@ -1,15 +1,25 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoiY2Fyb2xwb3MiLCJhIjoiQ01qN3dEWSJ9.Vgyz5uVSv3sw9QgPqdPTtA';
 
-    var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/carolpos/cj29jqouu00192tpe0a3jjrmm',
-        center: [-46.631,-23.604],
-        zoom: 10,
-        minZoom: 9,
-        maxZoom: 15,
-    });
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/carolpos/cj29jqouu00192tpe0a3jjrmm',
+    center: [-46.631,-23.604],
+    zoom: 10,
+});
 
-map.addControl(new mapboxgl.NavigationControl());
+// disable map zoom when using scroll
+map.scrollZoom.disable();
+
+var flyToParams = {
+    'sao-paulo': {
+        center: [-46.631,-23.604],
+        zoom: 10
+    },
+    'rio-janeiro': {
+        center: [-43.218,-22.863],
+        zoom: 10
+    },
+}
 
 var layers = {
     superior: ['pontos-superior', 'pontos-superior-rj'],
@@ -18,34 +28,39 @@ var layers = {
     incompleto: ['pontos-incompleto', 'pontos-incompleto-rj']
 }
 
+var layerStatuses = {
+    superior: true,
+    medio: true,
+    fundamental: true,
+    incompleto: true,
+}
 
-$(document).ready(function(){
-    $('.legend-container > li').click(function() {
-        var layerName = $(this).data('layer');
-        var element = $(this);
-
-        $.each(layers[layerName], function( index, value ) {
-
-            var visibility = map.getLayoutProperty(value, 'visibility');
-            if (visibility === 'visible') {
-                element.removeClass('active');
-                map.setLayoutProperty(value, 'visibility', 'none');
-            } else {
-                element.addClass('active');
-                map.setLayoutProperty(value, 'visibility', 'visible');
-            }
-        });
-
-    });
-
-    $('.city-container > li').click(function() {
-
-        if ($(this).hasClass('rio-janeiro')) {
-            map.flyTo({center: [-43.218,-22.863]});
-        } else if ($(this).hasClass('sao-paulo')) {
-            map.flyTo({center: [-46.631,-23.604]});
+function toggleLayer(layerName) {
+    $.each(layers[layerName], function( index, value ) {
+        var visibility = map.getLayoutProperty(value, 'visibility');
+        if (visibility === 'visible') {
+            map.setLayoutProperty(value, 'visibility', 'none');
+        } else {
+            map.setLayoutProperty(value, 'visibility', 'visible');
         }
-
     });
+}
 
+keyboardJS.bind('r', function(e) {
+  map.flyTo(flyToParams['rio-janeiro']);
+});
+keyboardJS.bind('s', function(e) {
+  map.flyTo(flyToParams['sao-paulo']);
+});
+keyboardJS.bind('1', function(e) {
+  toggleLayer('superior');
+});
+keyboardJS.bind('2', function(e) {
+  toggleLayer('medio');
+});
+keyboardJS.bind('3', function(e) {
+  toggleLayer('fundamental');
+});
+keyboardJS.bind('4', function(e) {
+  toggleLayer('incompleto');
 });
