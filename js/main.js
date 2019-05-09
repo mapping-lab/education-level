@@ -5,6 +5,10 @@ var map = new mapboxgl.Map({
     style: 'mapbox://styles/carolpos/cj29jqouu00192tpe0a3jjrmm',
     center: [-46.631,-23.604],
     zoom: 10,
+    maxBounds: [
+        [-48.000,-24.500], // Southwest coordinates
+        [-42.300,-22.000]  // Northeast coordinates
+    ]
 });
 
 // disable map zoom when using scroll
