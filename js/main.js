@@ -9,6 +9,7 @@ var map = new mapboxgl.Map({
 
 // disable map zoom when using scroll
 map.scrollZoom.disable();
+map.dragPan.disable();
 
 var flyToParams = {
     'sao-paulo': {
@@ -64,3 +65,18 @@ keyboardJS.bind('3', function(e) {
 keyboardJS.bind('4', function(e) {
   toggleLayer('incompleto');
 });
+
+// Pan using mouse wheel
+map.getContainer().addEventListener('wheel', onWheel, false);
+
+function onWheel(event) {
+    event.stopImmediatePropagation();
+    event.preventDefault();
+    map.panBy(
+        [
+            (event.deltaX * 1) / 1, // Divide by -1 for inverted axis
+            (event.deltaY * 1) / 1
+        ],
+        { animate: false }
+    );
+}
