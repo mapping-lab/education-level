@@ -70,6 +70,24 @@ keyboardJS.bind('4', function(e) {
   toggleLayer('incompleto');
 });
 
+var joystickSpeed = 5;
+
+// Joystick navigation
+keyboardJS.bind('h', function(e) {
+  map.panBy([-1 * joystickSpeed, 0], { animate: false });
+});
+keyboardJS.bind('l', function(e) {
+  map.panBy([1 * joystickSpeed, 0], { animate: false });
+
+});
+keyboardJS.bind('j', function(e) {
+  map.panBy([0, 1 * joystickSpeed], { animate: false });
+
+});
+keyboardJS.bind('k', function(e) {
+  map.panBy([0, -1 * joystickSpeed], { animate: false });
+});
+
 // Pan using mouse wheel
 map.getContainer().addEventListener('wheel', onWheel, false);
 
