@@ -51,26 +51,52 @@ function toggleLayer(layerName) {
     });
 }
 
+function showLayer(layerName) {
+    $.each(layers[layerName], function( index, value ) {
+        map.setLayoutProperty(value, 'visibility', 'visible');
+    });
+}
+function hideLayer(layerName) {
+    $.each(layers[layerName], function( index, value ) {
+        map.setLayoutProperty(value, 'visibility', 'none');
+    });
+}
+
+// FlyTo
 keyboardJS.bind('r', function(e) {
   map.flyTo(flyToParams['rio-janeiro']);
 });
 keyboardJS.bind('s', function(e) {
   map.flyTo(flyToParams['sao-paulo']);
 });
+
+// Layer events
 keyboardJS.bind('1', function(e) {
-  toggleLayer('superior');
+  showLayer('superior');
 });
 keyboardJS.bind('2', function(e) {
-  toggleLayer('medio');
+  showLayer('medio');
 });
 keyboardJS.bind('3', function(e) {
-  toggleLayer('fundamental');
+  showLayer('fundamental');
 });
 keyboardJS.bind('4', function(e) {
-  toggleLayer('incompleto');
+  showLayer('incompleto');
+});
+keyboardJS.bind('5', function(e) {
+  hideLayer('superior');
+});
+keyboardJS.bind('6', function(e) {
+  hideLayer('medio');
+});
+keyboardJS.bind('7', function(e) {
+  hideLayer('fundamental');
+});
+keyboardJS.bind('8', function(e) {
+  hideLayer('incompleto');
 });
 
-var joystickSpeed = 5;
+var joystickSpeed = 2;
 
 // Joystick navigation
 keyboardJS.bind('h', function(e) {
@@ -86,6 +112,14 @@ keyboardJS.bind('j', function(e) {
 });
 keyboardJS.bind('k', function(e) {
   map.panBy([0, -1 * joystickSpeed], { animate: false });
+});
+
+// Custom Zoom
+keyboardJS.bind('z', function(e) {
+  map.zoomIn({ animate: false });
+});
+keyboardJS.bind('x', function(e) {
+  map.zoomOut({ animate: false });
 });
 
 // Pan using mouse wheel
